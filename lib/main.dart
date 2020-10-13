@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ujian_flutter/shalat.dart';
 import 'pagi.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class Rute extends StatelessWidget {
         '/': (context) => MainApp(),
         '/dzikirpagi': (context) => DzikirPagi(),
         '/dzikirpetang': (context) => DzikirPetang(),
+        '/jadwalshalat' : (context) => Shalat()
       },
       debugShowCheckedModeBanner: false,
     );
@@ -30,13 +32,82 @@ class MainApp extends StatelessWidget {
         backgroundColor: Colors.purple,
         elevation: 0.0,
         title: Text("Mesin Pencari Sunnah"),
-        leading: IconButton(
-          icon : Icon(
-              Icons.menu,
-            color: Colors.white,
-          ),
-          onPressed: (){
-          },
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Damar Ardian Alfirisky"),
+              accountEmail: Text("damar.rizki212@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage("https://www.flaticon.com/svg/static/icons/svg/2919/2919600.svg"),
+              ),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg'),
+                      fit: BoxFit.cover
+                  )
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 20,bottom: 20),
+              child: Text(
+                "Utama",
+                textAlign: TextAlign.left,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            InkWell(
+              splashColor: Colors.black.withAlpha(10),
+              onTap: () {
+
+              },
+              child: Container(
+                child: ListTile(
+                    title: Text('Dashboard'),
+                    leading: Icon(
+                        Icons.home,
+                        color: Colors.black,
+                    )
+                ),
+              ),
+            ),
+            InkWell(
+              splashColor: Colors.black.withAlpha(10),
+              onTap: () {
+                Navigator.pushNamed(context, '/dzikirpagi');
+              },
+              child: Container(
+                height: 50,
+                child: ListTile(
+                  title: Text('Dzikir pagi'),
+                  leading: Image.asset(
+                    'assets/sun.png',
+                    height: 30,
+                    width: 30,
+                  )
+                ),
+              ),
+            ),
+            InkWell(
+              splashColor: Colors.black.withAlpha(10),
+              onTap: () {
+                Navigator.pushNamed(context, '/dzikirpetang');
+              },
+              child: Container(
+                height: 50,
+                child: ListTile(
+                  title: Text('Dzikir Petang'),
+                  leading: Image.asset(
+                      'assets/waning-moon.png',
+                    height: 30,
+                    width: 30,
+                  )
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       backgroundColor: Colors.purple,
@@ -155,7 +226,7 @@ class MainApp extends StatelessWidget {
                   child: InkWell(
                     splashColor: Colors.black.withAlpha(30),
                     onTap: () {
-                      print("cardTapped");
+                      Navigator.pushNamed(context, '/jadwalshalat');
                     },
                     child: Container(
                       padding: EdgeInsets.all(2),
