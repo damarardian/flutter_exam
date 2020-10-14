@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   geolocator: ^5.1.3
   shared_preferences: ^0.5.7+1
+  http: ^0.12.0+1
+  flutter_html: ^1.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -58,6 +60,7 @@ flutter:
     - assets/person.JPG
     - assets/index.jpg
     - assets/jadwal_shalat.PNG
+    - assets/jadwal_shalat2.PNG
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ujian_flutter/shalat.dart';
+import 'AlQuran.dart';
 import 'pagi.dart';
 
 void main() {
@@ -16,7 +17,9 @@ class Rute extends StatelessWidget {
         '/': (context) => MainApp(),
         '/dzikirpagi': (context) => DzikirPagi(),
         '/dzikirpetang': (context) => DzikirPetang(),
-        '/jadwalshalat' : (context) => Shalat()
+        '/jadwalshalat' : (context) => Shalat(),
+        '/alquran' : (context) => AlQuran(),
+
       },
       debugShowCheckedModeBanner: false,
     );
@@ -145,7 +148,7 @@ class MainApp extends StatelessWidget {
                   child: InkWell(
                     splashColor: Colors.black.withAlpha(30),
                     onTap: () {
-                      print("cardTapped");
+                     Navigator.pushNamed(context, '/alquran');
                     },
                     child: Container(
                       padding: EdgeInsets.all(2),

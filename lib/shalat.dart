@@ -43,14 +43,14 @@ class _ShalatState extends State<Shalat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff00805d),
+      backgroundColor: Color(0xff9c28b1),
       body: SafeArea(
           child: Container(
             child: Column(children: <Widget>[
               SizedBox(height: 30),
               Container(
                 width: double.infinity,
-                child: Image.asset('assets/jadwal_shalat.PNG'),
+                child: Image.asset('assets/jadwal_shalat2.PNG'),
               ),
               SizedBox(height: 10),
               Container(
@@ -82,7 +82,7 @@ class _ShalatState extends State<Shalat> {
                                   child: Text(
                                     _prayerTimes[position],
                                     style: TextStyle(
-                                        color: Colors.teal,
+                                        color: Color(0xff9c28b1),
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   ),
